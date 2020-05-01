@@ -15,7 +15,7 @@ dotenv.config({path: '.env'});
 //Set up mongoose connection
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-const mongoDB = process.env.ATLAS_URI;
+const mongoDB = process.env.ATLAS_URI || dev_db_url;
 mongoose.connect(mongoDB, {
 useNewUrlParser: true,useUnifiedTopology: true
 });
